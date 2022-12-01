@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang ="ru">
+<head>
+    <meta charset = "UTF-8">
+    <title>Фотопортал</title>
+    <link rel="stylesheet" href = "edit.css">
+</head>
+<body>
+<div class = "wrapper">
+    <div class = "center" style="grid-area: center" id ="top">
+        <fieldset>
+            <legend >Редактирование:</legend>
+        <span class="bl"><label for="name">Название</label><input type="text" id="name"></span>
+        <span class="bl"><label for="country">Страна</label><input type="text" id="country"></span>
+        <span class="bl"><label for="dosage">Дозировка</label><input type="text" id="dosage"></span>
+        <span class="bl"><label for="price">Цена</label><input type="text" id="price"></span>
+        <span class="bl"><label for="photoLink">Ссылка на фото</label><input type="text" id="photoLink"></span>
+        <span class="bl"><input type="button" value="Сохранить пост" onclick="Save(this)"></span>
+        </fieldset>
+    </div>
+</div>
+</body>
+<script src="PostArray.js"></script>
+<script src="ViewList.js"></script>
+<script src="PostsList.js"></script>
+<script src="Listener.js"></script>
+<script src="LoadPosts.js"></script>
+<script src="EditPost.js"></script>
+<script>
+    var user = location.search.split('user=')[1];
+    user=decodeURI(user);
+    document.getElementById("top").innerHTML+=' <a href="lenta.html?user=' +user+' "class="green">Перейти в ленту постов</a>';
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang ="ru">
+<head>
+    <meta charset = "UTF-8">
+    <title>Фотопортал</title>
+    <link rel="stylesheet" href = "lenta.css">
+</head>
+<body>
+<div class = "wrapper">
+    <div class = "header" style="grid-area: header">
+    </div>
+    <div class="left" style="grid-area: left" id="top">
+        <img src="images/account.png" width="40px" height="40px" style="float:left; margin:5% 0px 0px 5%;">
+        <span class="name_surname">Имя</span>
+        <fieldset>
+        <legend >Фильтрация:</legend>
+        <span class="bl"><label for="name">Страна</label><input type="text" id="name"></span>
+        <span class="bl"><label for="country">Город</label><input type="text" id="country"></span>
+        <span class="bl"><label for="dosage">Тематика</label><input type="text" id="dosage"></span>
+        <span class="bl"><input type="submit" value="Отправить" onclick="Sorting(this)"></span>
+        <span class="bl"><input type="submit" value="Очистить" onclick="SortingClear()"></span>
+        </fieldset>
+    </div>
+    <div class="right" style="grid-area: right">
+        <div class="right-list-block">
+            <div class="right-list">
+
+            </div>
+        </div>
+        <div class="loading" onclick="showNewTenElements()"><span>Загрузить еще</span> </div>
+    </div>
+    <div class="footer" style="grid-area: footer"> ©2022</div>
+
+</div>
+    <script  src="PostArray.js"></script>
+    <script src="ViewList.js"></script>
+    <script  src="PostsList.js"></script>
+    <script src="Listener.js"></script>
+    <script src="LoadPosts.js"></script>
+    <script src="Filter.js"></script>
+    <script>
+        var user = location.search.split('user=')[1];
+        if(user==undefined){
+            document.getElementById("top").innerHTML+='<a href="sign_in.html" class="log_in">Войти</a>';
+        }
+        else{
+            user=decodeURI(user);
+            document.getElementsByClassName("name_surname")[0].innerHTML=user;
+            document.getElementById("top").innerHTML+='<a href="edit.html?user='+user+'"class="post">Добавить пост</a>';
+            document.getElementById("top").innerHTML+='<a href="lenta.html" class="log_out">Выйти</a>';
+        }
+        Load();
+        Views.showTenEl(0, 10);
+        function SortingClear(){
+            document.getElementById("name").value='';
+            document.getElementById("country").value='';
+            document.getElementById("dosage").value='';
+            document.getElementById("price").value='';
+            Sorting();
+        }
+    </script>
+</body>
+</html>
