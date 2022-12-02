@@ -1,5 +1,5 @@
 # KP_2022
-It is website for sharing information about meds.
+It is website for sharing information about meds (mainApp folder).
 
 I have no idea how to make a good looking html page with all that css, which breaking down after every edit. 
 
