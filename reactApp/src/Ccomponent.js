@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import './styles.css';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
@@ -20,7 +19,7 @@ export default class Ccomponent extends Component{
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
-    //стейт обновлять через странную стрелочку
+    //я уже знаю, что такое странная стрелочка, сюжет развивается
     // clickIncrement(){
     //     this.setState(state => ({ count: state.count + 1 
     //     }));
